@@ -1,0 +1,57 @@
+
+/index
+
+
+/login -> route based on group.
+
+/student/new-registration -> will check the flapper and then only allow for new student registration
+(only allowed for student group)
+/student/profile (login_required) -> student can see their profile and request for update
+/student/course (login_required) -> Can view the course details and other details shared by facult
+/student/grade (login_required) -> can view the examination details shared by Examination Team
+/student/faculty-feedback (login_requid ) -> Only open as per administration
+
+/admission/new-registration
+(only allowed to admission group)
+/admission/student-registration (login_required) -> to view the student registration form
+/admission/course-registration ( login_required) -> to manage course and student registration window
+/admission/profile (login_required) -> to view the individual profile
+/admission/finance (login_required) -> to only specif 
+
+/faculty/new-registration
+(only allowed to faculty )
+/faculty/schedule (login_required) -> can set or show the schedule ( avaialble to all faculty member (shared view))
+/faculty/peformance-evaulation (login_required) -> only specific to individuals
+/faculty/profile/ (login_required) -> to view the individual profile
+/faculty/finance (login_required) -> only specifi to individuals | information about the salary and current package etc.
+
+/administration/new-registration
+(only allowed to administration )
+/administration/groups (login_required) -> can manage groups
+/administration/permission (login_required) -> can manage permissions
+/administration/users (login_required) -> Can manage users
+/administration/book-catalog (login_required) -> to add or update books and number of avaialble copies
+/administration/book-borrowing -> to manage borrowing and returngin of books
+/administration/event-new (login_required)
+(all are allowed)
+/admnnistration/upcoming-events -> to get the details of upcoming events ( avaiable for all the groups but login is required)
+
+/finance/new-registration
+(only allowed to finance group)
+/finance/fee/student-registration
+/finance/fee/student
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+global_auth ( django -app )
+login, password_reset, forget_password & redirect based on user group
+/global_auth/login
+/global_auth/password_reset/
+/global_auth/_password_successfull/ -> partials htmx page for successful password rest_succesful
+/global_auth/_password_error/ -> partial htmx page for error during password reset
+/global_auth/forget_password/
+/global_auth/_forget_password_succesful/ -> partial htmx page for successful sending of forget password email
+/global_auth/_forget_password_error/ -> partial htmx page for error while tring to send email for forgetting password
+/global_auth/forget_password/reset/<str:hmackey>/
+/global_auth/forget_password/reset/_successful/ -> partial htmx page for sucess reset
+/global_auth/forget_password/reset/_error/ -> partial htmx page for error duing password reset
